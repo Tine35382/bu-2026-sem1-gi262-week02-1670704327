@@ -10,7 +10,7 @@ namespace Assignment
 
         void Start()
         {
-            // LCT01_SyntaxArray();
+           // LCT01_SyntaxArray();
             // LCT02_ArrayInitialize();
             // LCT03_SyntaxLoop();
             // LCT04_LoopAndArray();
@@ -19,16 +19,32 @@ namespace Assignment
             // LCT07_SyntaxNestedLoop();
         }
 
-        #region Lecture
+#region Lecture
 
         public void LCT01_SyntaxArray()
         {
-            throw new System.NotImplementedException();
+            string[] _ironManSuit = new string[2];
+            _ironManSuit[0] = "Mark I";
+            _ironManSuit[1] = "Mark II";
+            string tonyStarjwear = _ironManSuit[0];
+            Debug.Log(_ironManSuit[0]);
+            Debug.Log(_ironManSuit[1]);
         }
 
         public void LCT02_ArrayInitialize()
         {
-            throw new System.NotImplementedException();
+            string[] spidermanSuits = new string[] { "Classic", "Black Suit", "Iron Spider" };
+            string[] batmanSuits = new string[2] { "Classic", "White bat" };
+
+            Debug.Log($"Room size: {spidermanSuits.Length}");
+            Debug.Log(spidermanSuits[0]);
+            Debug.Log(spidermanSuits[1]);
+            Debug.Log(spidermanSuits[2]);
+
+            Debug.Log($"Room size: {batmanSuits.Length}");
+            Debug.Log(batmanSuits[0]);
+            Debug.Log(batmanSuits[1]);
+
         }
 
         /*
@@ -47,7 +63,17 @@ namespace Assignment
          */
         public void LCT03_SyntaxLoop()
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < 10; i++)
+
+            {
+                Debug.Log("<10 :  " + i);
+            
+            } 
+            Debug.Log("======================");
+            for (int i = 1; i <= 10; i++)
+            {
+                Debug.Log("<=10 : " + i);
+            }
         }
 
         /*
@@ -79,7 +105,17 @@ namespace Assignment
         public string[] lct04_ironManSuitNames;
         public void LCT04_LoopAndArray()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("--------------Log by one increment--------------------");
+            for (int i = 0; i < lct04_ironManSuitNames.Length; i++)
+            {
+                Debug.Log(lct04_ironManSuitNames[i]);
+            }
+
+            Debug.Log("--------------Log by two increment--------------------");
+            for (int i = 0; i < lct04_ironManSuitNames.Length; i = +2) 
+            { 
+                Debug.Log(lct04_ironManSuitNames); 
+            }
         }
 
         /*
@@ -114,7 +150,30 @@ namespace Assignment
          */
         public void LCT05_Syntax2DArray()
         {
-            throw new System.NotImplementedException();
+            int[,] my2DArray = new int[3, 3]
+            { 
+                {1,2,3 },  // Row 1 0
+                {4,5,6, }, // Row 2 1
+                {7,8,9, }  // Row 3 2
+            };
+
+            
+
+            //GetLength(0) หมายถึง Array ช่องแรก หรือ x หรือ col (แนวตั้ง)
+            for (int row = 0; row < my2DArray.GetLength(0); row++) 
+            {
+
+                string rowStr = "";
+
+                //GetLength(0) หมายถึง Array ช่องแรก หรือ y หรือ col (แนวนอน)
+                for (int col = 0; col < my2DArray.GetLength(1); col++)
+                {
+                    rowStr += my2DArray[row, col] + ",";
+                }
+                 Debug.Log(rowStr);
+            }
+
+
         }
 
         /*
@@ -153,6 +212,16 @@ namespace Assignment
         public void LCT06_SizeOf2DArray()
         {
             int[,] my2DArray = lct06_my2DArray.Get2DArray();
+            int rows = my2DArray.GetLength(0);
+            int cols = my2DArray.GetLength(1);
+            
+
+            int size = my2DArray.Length;
+
+
+            Debug.Log($"rows = {rows}");
+            Debug.Log($"cols = {cols}");
+            Debug.Log($"size = {size}");
         }
 
         /*
@@ -238,6 +307,13 @@ namespace Assignment
         }
 
         #endregion
+        public string[] ironmanSuit = new string[2];
+          /*public void LCT01_SyntaxArray() 
+        {
+            string[] _ironMansuit = new string[2];
+        
+        }
+          */
 
         private void PrintBoard(string[,] board)
         {
